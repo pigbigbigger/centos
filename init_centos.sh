@@ -33,13 +33,15 @@ yes | yum install epel-release -y
 yes | yum install httpd -y
 #systemctl restart httpd
 
-
+yum install util-linux-user -y
 yum install zsh -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/p' ~/.zshrc 
 source ~/.zshrc   
+chsh -s /bin/zsh
+
 
 
 yes | yum install nginx -y
