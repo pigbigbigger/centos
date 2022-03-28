@@ -46,10 +46,10 @@ chsh -s /bin/zsh
 
 
 yes | yum install nginx -y
-yum -y install gcc automake autoconf libtool make 
-yum install -y centos-release-scl-rh centos-release-scl
-yum install devtoolset-7-gcc.x86_64 devtoolset-7-gcc-c++.x86_64 -y
-scl enable devtoolset-7 bash
+# yum -y install gcc automake autoconf libtool make 
+# yum install -y centos-release-scl-rh centos-release-scl
+# yum install devtoolset-7-gcc.x86_64 devtoolset-7-gcc-c++.x86_64 -y
+# scl enable devtoolset-7 bash
 systemctl enable nginx
 
 sudo dnf groupinstall 'development tools'
